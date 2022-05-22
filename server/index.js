@@ -21,12 +21,12 @@ const sendTokenResponse = (token, res) => {
   );
 };
 
-if(process.env.NODE_ENV === "production") {
-  app.use(express.static('build'));
-  app.get('*', (req,res) => {
-    res.sendFile(path.resolve('client/build', 'index.html'))
-  })
-}
+// if(process.env.NODE_ENV === "production") {
+//   app.use(express.static('build'));
+//   app.get('*', (req,res) => {
+//     res.sendFile(path.resolve('client/build', 'index.html'))
+//   })
+// }
 
 app.get('/api/greeting', (req, res) => {
   const name = req.query.name || 'World';
